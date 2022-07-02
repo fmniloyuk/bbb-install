@@ -1,8 +1,27 @@
 <img width="1012" alt="bbb-install-banner" src="https://user-images.githubusercontent.com/1273169/141152865-f497c883-6c96-41c6-9040-613b0858878a.png">
 
+
+### Pre-installation checks
+Run "cat /etc/default/locale" If you don’t see LANG="en_US.UTF-8", enter the following commands to set the local to en_US.UTF-8.
+```
+sudo apt-get install -y language-pack-en
+sudo update-locale LANG=en_US.UTF-8
+sudo systemctl set-environment LANG=en_US.UTF-8
+```
+
+Verify LANG="en_US.UTF-8 exist 
+```
+cat /etc/default/locale
+sudo systemctl show-environment
+```
+
+### set a password for root user in a single go before running 
+```
+sudo passwd root
+su -
+```
+
 ### Note:
-
-
 Naming convention:
 
 Please use `bbb-install-<X.Y>.sh` to install BigBlueButton X.Y or upgrade to that release.
